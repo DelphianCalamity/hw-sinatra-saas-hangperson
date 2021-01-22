@@ -20,7 +20,7 @@ class HangpersonGame
     require 'net/http'
     uri = URI('https://random-word-api.herokuapp.com/word')
     Net::HTTP.new('random-word-api.herokuapp.com').start { |http|
-        return http.get(uri).body.gsub(/[\[\]\"]/, '')
+      return http.get(uri).body.gsub(/[\[\]\"]/, '')
     }
   end
 
