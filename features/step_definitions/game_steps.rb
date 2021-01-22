@@ -10,7 +10,7 @@ end
 World(WithinHelpers)
 
 When /^I start a new game with word "(.*)"$/ do |word|
-  stub_request(:get, "https://random-word-api.herokuapp.com/word").
+  stub_request(:get, "http://random-word-api.herokuapp.com/word").
     to_return(:status => 200, :headers => {}, :body => word)
   visit '/new'
   click_button "New Game"

@@ -18,7 +18,7 @@ class HangpersonGame
   def self.get_random_word
     require 'uri'
     require 'net/http'
-    uri = URI('https://random-word-api.herokuapp.com/word')
+    uri = URI('http://random-word-api.herokuapp.com/word')
     Net::HTTP.new('random-word-api.herokuapp.com').start { |http|
       return http.get(uri).body.gsub(/[\[\]\"]/, '')
     }
