@@ -16,13 +16,11 @@ class HangpersonGame
   # And then in the irb: irb(main):001:0> HangpersonGame.get_random_word
   #  => "cooking"   <-- some random word
   def self.get_random_word
-    require 'json'
     require 'uri'
     require 'net/http'
     uri = URI('https://random-word-api.herokuapp.com/word')
     Net::HTTP.new('random-word-api.herokuapp.com').start { |http|
-        word = http.get(uri).body
-        return word.gsub(/[\[\]\"]/, '')
+        return http.get(uri).body.gsub(/[\[\]\"]/, '')
     }
   end
 
